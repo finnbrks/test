@@ -1,0 +1,818 @@
+/*  em measurements
+--------------------------------------------------------------------------------------- */
+html { font-size: 16px; }
+
+
+/*  global styles to reset default values
+--------------------------------------------------------------------------------------- */
+*,
+*:before,
+*:after { box-sizing: border-box; }
+
+body, div, ul, li, img, video, section, figure, figcaption, main, footer, 
+h1, h2, h3, p, p2, a { margin: 0px; padding: 0px; border: 0px; }
+
+body { background: #f2f2f2; color: #333; }
+
+/* Fonts
+--------------------------------------------------------------------------------------- */
+body {
+    font-family: Arial, sans-serif;
+}
+
+h1, h2, h3 {
+    font-family: Arial, sans-serif;
+    font-weight: bold; /* Keeps text bold for headings */
+}
+
+p {
+    font-family: Arial, sans-serif;
+}
+
+figcaption {
+    font-family: Arial, sans-serif;
+    font-style: italic; /* Keeps italic style for figcaptions */
+}
+
+
+/*  top navigation section
+--------------------------------------------------------------------------------------- */
+
+body {
+  margin: 0;
+}
+
+container {
+  display: flex;
+  justify-content: center; /* Center the container horizontally */
+}
+
+nav {
+  background-color: transparent;
+  padding: 5px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+nav h1 {
+  margin-left: 15%; /* Adjust as needed */
+  font-weight: normal; /* Remove bold style */
+}
+
+nav ul {
+  margin: 0;
+  padding: 0;
+  margin-right: 15%; /* Adjust as needed */
+}
+
+nav ul li {
+  display: inline-block;
+}
+
+nav ul li a {
+  display: inline-block;
+  color: #000;
+  padding: 14px 16px;
+  text-decoration: none;
+  background-color: transparent;
+}
+
+/* Adjustments for the navigation */
+nav {
+  position: fixed; /* Position the navigation bar */
+  top: 0; /* Align it to the top of the viewport */
+  left: 0; /* Align it to the left edge of the viewport */
+  width: 100%; /* Make it span the full width of the viewport */
+  background-color: transparent;
+  z-index: 1000; /* Ensure it appears above other content */
+}
+
+/* Adjustments for the container */
+.container {
+  padding-top: 60px; /* Add padding to the top of the container to prevent content from being hidden behind the fixed navigation */
+}
+
+/* Adjustments for the slideshow container */
+.slideshow-container {
+  margin-top: 60px; /* Add margin to the top of the slideshow container to prevent it from being hidden behind the fixed navigation */
+}
+
+
+  text-decoration: none; /* Remove underline */
+
+/*  main page title after top navigation
+nav + h2 selects first <h2> after <nav>
+--------------------------------------------------------------------------------------- */
+/* Adjustments for the heading container */
+.heading-container {
+    text-align: center; /* Center align the text */
+}
+
+/* Adjustments for the h2 inside the heading container */
+.heading-container h2 {
+    display: inline-block; /* Make the heading display inline-block */
+    font-size: 2rem;
+    line-height: 2.15rem;
+    margin: 1rem auto 3rem; /* Center the heading vertically and horizontally */
+    position: relative; /* Add relative positioning */
+}
+
+
+
+/*  hero image
+.container > figure selects all <figure> where parent is .container
+--------------------------------------------------------------------------------------- */
+.container > figure { margin: 0 .5rem 2rem .5rem; }
+
+
+/*  main content: note padding on section
+--------------------------------------------------------------------------------------- 
+section { margin:0; padding: 0 .5rem 1.5rem; }
+
+section h3, section div h3 { font-size: 1.5rem; line-height: 2.25rem; }
+
+section figure { margin-bottom: 1rem; }
+
+section figcaption { font-size: 1rem; }
+
+section div { margin-top: -0.375rem; }  /* to adjust type against images */
+
+
+/*  default paragraph styling
+--------------------------------------------------------------------------------------- */
+p { margin: 0 0 1rem 0; max-width: 36em; max-width: 42em; } /* max-width sets line length */
+p { font-size: 1.5rem; line-height: 1.375em; }
+/* p { line-height: 2.0625rem; } */ 
+
+p2 { margin: 0 0 1rem 0; max-width: 36em; max-width: 42em; } /* max-width sets line length */
+p2 { font-size: 1rem; line-height: 1.375em; }
+/* p { line-height: 2.0625rem; } */ 
+
+
+/*  media defaults to force image & video width to parent element width
+--------------------------------------------------------------------------------------- */
+img		{ width: 100%; height: auto; }
+
+video	{ width: 100%; }
+
+.max 	{ max-width: 100%; }  /* max-width can stop img element going bigger than its actual size */
+
+
+/*  link styling
+--------------------------------------------------------------------------------------- */
+/* Styling for the "Finn Brooks" link in the navigation */
+nav h1 a,
+nav ul li a {
+  color: black; /* Set color to black */
+  text-decoration: none; /* Remove underline */
+}
+
+/* Styling for the project titles */
+section.home h3 a,
+.slides .slide a {
+  color: black; /* Set color to black */
+  text-decoration: none; /* Remove underline */
+}
+
+/* Styling for the project titles on hover */
+section.home h3 a:hover,
+.slides .slide a:hover {
+  color: black; /* Set color to black */
+  text-decoration: none; /* Remove underline */
+}
+
+.home a {
+  color: black;
+  text-decoration: none;
+}
+
+/* Styling for the navigation links */
+nav ul li a {
+  display: inline-block;
+  padding: 14px 16px;
+  text-decoration: none;
+  background-color: transparent;
+  color: gray; /* Set default color for links */
+}
+
+/* Styling for the navigation links when hovered */
+nav ul li a:hover {
+  color: black; /* Change color on hover */
+}
+
+/* Styling for the navigation links when active */
+nav ul li a:active,
+nav ul li a:visited {
+  color: black; /* Change color when active or visited */
+}
+
+
+/* 
+IMPORTANT: media query - switches on grid layout if page width is wider than 768px
+--------------------------------------------------------------------------------------- */
+@media (min-width: 768px) {
+
+
+/*  IMPORTANT: min-width:60em rule will stop the container from resizing  
+60rem = 960px
+90rem = 1440px
+--------------------------------------------------------------------------------------- */
+	/*.container { min-width: 60rem; min-width: 0; }
+
+	.force-height { min-height: 100vh; }
+
+
+/*  top navigation grid
+--------------------------------------------------------------------------------------- */	
+	/*nav {
+		overflow: hidden;
+  background-color: #e2e2e2;
+	}
+
+	nav h1	{ font-size: 1.75rem; margin-bottom: .5rem; margin-top: 0; }
+
+	nav ul { margin: 0; }
+	nav ul li { font-size: 1.75rem; margin: 0 0 0 1.25rem; }
+
+
+/*  main page title after top navigation
+--------------------------------------------------------------------------------------- */
+.container > h2 { 
+    font-size: 2rem;
+    line-height: 1.15em;
+    margin: 3rem auto 4rem;
+    text-align: center; 
+}
+
+.slide {
+    position: relative;
+    overflow: hidden;
+}
+
+.slide img {
+    display: block;
+    width: 100%;
+    height: auto;
+    transition: filter 0.3s ease;
+}
+
+.slide:hover img {
+    filter: brightness(90%);
+}
+
+.overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    padding: 20px;
+    opacity: 0;
+    transition: opacity 0.3s;
+    text-align: center;
+}
+
+.slide:hover .overlay {
+    opacity: 1;
+}
+
+
+/*  hero image
+--------------------------------------------------------------------------------------- */
+	h2 + figure { margin: 0; padding-bottom: 3rem; }
+	h2 + figure img { display: block; }
+
+
+/*  default desktop section styles
+--------------------------------------------------------------------------------------- */
+	section { padding: 0 .5rem 4rem; }
+
+	section figure { margin: 0; }
+
+	section h3 { margin-bottom: .5em; }
+
+
+/*  section default 12 column grid
+--------------------------------------------------------------------------------------- */
+	section { 
+		display: grid; 
+		grid-template-columns: repeat(12, 1fr);
+		grid-template-rows: minmax(2.5rem, auto);
+		grid-column-gap: 1.5rem;
+		grid-row-gap: 0.625rem;    /*  .625% of 16 = 10, 0.625em = 10px ...  */
+		grid-row-gap: 0;
+		grid-template-areas:
+		"hd hd hd hd hd hd hd hd hd hd hd hd"
+		"fg fg fg fg dv dv dv dv dv dv dv dv";
+	}
+
+	section h3		{ grid-area: hd; }
+	section figure	{ grid-area: fg; }
+	section div		{ grid-area: dv; }
+
+
+/*  simple 3 column grid
+--------------------------------------------------------------------------------------- */
+	section.three {
+		display: grid;
+		grid-template-columns: 1fr 1fr 1fr;
+		grid-template-rows: 2rem auto;
+		grid-column-gap: 1.5rem; grid-column-gap: 3rem;
+		grid-row-gap: 1rem; grid-row-gap: .5rem;
+		grid-template-areas:
+		"fg hd hd"
+		"fg dv dv";
+	}
+
+	section.three h3		{ grid-area: hd; }
+	section.three figure	{ grid-area: fg; }
+	section.three div		{ grid-area: dv; }
+	
+	section.three h3		{ margin-top: -0.6rem; }
+	section.three div		{ margin-top: 0; }
+
+
+/*  3 column grid with right hand image
+--------------------------------------------------------------------------------------- */	
+	section.right {
+		display: grid;
+		grid-template-columns: 1fr 1fr minmax(20rem, 1fr);
+		grid-template-rows: minmax(2rem, auto) auto;
+		grid-column-gap: 1.5rem; grid-column-gap: 4rem;
+		grid-row-gap: 0; grid-row-gap: 0rem;
+		grid-template-areas:
+		"hd hd fg"
+		"dv dv fg";
+	}
+	
+	section.right h3		{ margin-top: 0; }
+	section.right div		{ margin-top: 0; }
+
+
+
+/*  wide right hand image spanning two columns
+--------------------------------------------------------------------------------------- */
+	section.wide {
+		display: grid;
+		grid-template-columns: minmax(10rem, 1fr) 1fr 1fr;
+		grid-template-rows: minmax(2.5rem, auto);
+		grid-column-gap: 1.5rem;
+		grid-row-gap: 0;
+		grid-template-areas:
+		"hd fg fg"
+		"dv fg fg";
+	}
+
+
+/*  intro
+--------------------------------------------------------------------------------------- */
+	section.intro {
+		display: grid;
+		grid-template-columns: 1fr 1fr 1fr;
+		grid-template-rows: auto;
+		grid-column-gap: 1.5rem;  
+		grid-row-gap: 0;
+		grid-template-areas:
+		"dv dv dv";
+	}
+
+	section.intro h3	{ grid-area: hd; }
+	section.intro div	{ grid-area: dv; }
+
+	section.intro div h3,
+	section.intro div p	{ font-size: 2rem; }
+
+	section.intro		{ margin-bottom: 4rem; }
+
+
+/*  images-two
+--------------------------------------------------------------------------------------- */
+	section.images-two {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		grid-template-rows: auto;
+		grid-column-gap: 0; 
+		grid-row-gap: 1rem;
+		grid-template-areas:
+		"f1 f2"
+		"hd hd"
+		"dv dv";
+	}
+
+	section.images-two h3						{ grid-area: hd; }
+	section.images-two figure					{ grid-area: f1; }
+	section.images-two figure:nth-of-type(2)	{ grid-area: f2; }
+	section.images-two div 						{ grid-area: dv; }
+
+	section.images-two div h3,
+	section.images-two div p { font-size: 1.5rem; }
+
+
+/*  images-three
+--------------------------------------------------------------------------------------- */
+	section.images-three {
+		display: grid;
+		grid-template-columns: 1fr 1fr 1fr;
+		grid-template-rows: auto;
+		grid-column-gap: 2rem; 
+		grid-row-gap: 1rem;
+		grid-template-areas:
+		"f1 f2 f3"
+		"hd hd hd"
+		"dv dv dv";
+	}
+
+	section.images-three h3						{ grid-area: hd; }
+	section.images-three figure					{ grid-area: f1; }
+	section.images-three figure:nth-of-type(2)	{ grid-area: f2; }
+	section.images-three figure:nth-of-type(3)	{ grid-area: f3; }
+	section.images-three div					{ grid-area: dv; }
+
+	section.images-three div h3,
+	section.images-three div p { font-size: 1.5rem; }
+
+
+/*  images-three-plus
+--------------------------------------------------------------------------------------- */
+	section.images-three-plus {
+		display: grid;
+		grid-template-columns: 1fr 1fr 1fr;
+		grid-template-rows: auto;
+		grid-column-gap: 2rem; 
+		grid-row-gap: 2rem;
+		grid-template-areas:
+		"f1 f2 f3"
+		"d1 d2 d3";
+	}
+
+	section.images-three-plus figure				{ grid-area: f1; }
+	section.images-three-plus figure:nth-of-type(2)	{ grid-area: f2; }
+	section.images-three-plus figure:nth-of-type(3)	{ grid-area: f3; }
+	section.images-three-plus div					{ grid-area: d1; }
+	section.images-three-plus div:nth-of-type(2)	{ grid-area: d2; }
+	section.images-three-plus div:nth-of-type(3)	{ grid-area: d3; }
+
+	section.images-three-plus		{ padding: 0 0 2rem; }
+
+	section.images-three-plus div h3,
+	section.images-three-plus div p { font-size: 1.5rem; }
+
+
+/* full width
+--------------------------------------------------------------------------------------- */
+	section.full { display: block; padding: 1rem 0 0; }
+
+	section.full figure {
+		grid-area: auto;
+		display: grid;
+		grid-template-columns: 1fr;
+		grid-gap: 0;
+		grid-template-areas:
+		"f1"
+		"im";
+	}
+
+	section.full figure img			{ grid-area: im; }
+	section.full figure figcaption	{ grid-area: f1; justify-self: center; }
+
+	section.full					{ margin-bottom: 4rem; }
+	section.full figure img			{ display: block; }
+	section.full figcaption h3		{ font-size: 3rem; }
+
+
+/* two columns
+--------------------------------------------------------------------------------------- */
+	section.two {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		grid-template-rows: minmax(2.5rem, auto);
+		grid-column-gap: 1.5rem;
+		grid-row-gap: 0;
+		grid-template-areas:
+		"fg hd"
+		"fg dv";
+	}
+
+
+/* two columns right image
+--------------------------------------------------------------------------------------- */
+	section.two-right {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		grid-template-rows: minmax(2.5rem, auto);
+		grid-column-gap: 1.5rem;
+		grid-row-gap: 0;
+		grid-template-areas:
+		"hd fg"
+		"dv fg";
+	}
+
+
+/* pull quote
+--------------------------------------------------------------------------------------- */
+	section.pull {
+		display: grid;
+		grid-template-columns: 1fr;
+		grid-template-rows: auto;
+		grid-column-gap: 0;
+		grid-row-gap: 0;
+		grid-template-areas:
+		"dv";
+	}
+
+	section.pull { margin-bottom: 4rem; }
+
+	.pull p { font-size: 2rem; }
+
+
+/* out of background
+--------------------------------------------------------------------------------------- */
+	section.colourbox {
+		padding: 3rem;
+		margin-bottom: 4rem;
+	}
+
+	.orange {
+		background:#aaa;
+	}
+	
+    /* temp hack to fix background colour issue */
+	@media (max-width: 990px) {
+		section.half.orange { background: transparent; }
+		section.half figcaption { padding-top: .5rem !important; }
+	}
+
+
+
+/* half
+--------------------------------------------------------------------------------------- */
+	section.half {
+		display: grid;
+		grid-template-columns: 1fr;
+		grid-template-rows: 1fr;
+		grid-column-gap: 0; 
+		grid-row-gap: 0; 
+		grid-template-areas:
+		"all";
+	}
+
+	section.half figure {
+		grid-area: all; 
+		display: grid;
+		grid-template-columns: minmax(22rem, 1fr) 1fr;
+		grid-template-rows: minmax(4rem, auto) 1fr; 
+		grid-template-rows: 1fr;
+		grid-column-gap: 0; 
+		grid-row-gap: 0; 
+		grid-template-areas:
+		"im fc";
+	}
+
+	section.half { padding: 0; margin-bottom: 4rem; }
+
+	section.half figure img			{ grid-area: im;}
+	section.half figure figcaption	{ grid-area: fc; }
+
+	section.half figure { margin-bottom: 0; }
+	section.half figure img  { display: block; }
+	section.half figcaption { padding: 2rem 3rem 0 2rem;  margin-top: 0; }
+
+	section.half figure figcaption h3  {
+		padding: 0 3rem .25rem 0; 
+		margin-bottom: 0 !important; 
+		font-size: 1.5rem;
+		line-height: 1.25rem; 
+	}
+
+
+/*  custom section about page
+--------------------------------------------------------------------------------------- */
+	section.about {
+	display: grid;
+	grid-template-columns: minmax(24rem, 5fr) 4fr 3fr;
+	grid-template-rows: auto;
+	grid-column-gap: 1.5rem;
+	grid-row-gap: 0;
+	grid-template-areas:
+	"fg dv dv";
+	}
+
+
+/*  section.video grid
+--------------------------------------------------------------------------------------- */	
+	section.video  {
+		display: grid;
+		grid-template-columns: repeat(4, 1fr);
+		grid-template-rows: auto;
+		grid-column-gap: 0.5rem;
+		grid-row-gap: 0;
+		background: transparent;
+		grid-template-areas:
+		"v1 v1 v1 v1"
+		"t2 t2 t2 t2";
+	}
+
+	section.video figure	{ grid-area: v1; }
+	section.video div		{ grid-area: t2; }
+
+	section.video figure	{ padding:0; }
+	section.video div		{ background: transparent; }
+	section.video p			{ max-width: 32rem; color: #777; }
+	section.video h3		{ padding-top: 1rem; }
+
+
+/*  home page auto grid
+--------------------------------------------------------------------------------------- */		
+section.home {
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr;
+	grid-template-rows: auto;
+	grid-gap: 1rem;
+	grid-row-gap: 1rem;
+	grid-template-areas:
+	"h1 h1 h1"
+	"h2 h3 h4";
+}
+
+section.home { padding: 0 .5rem 2rem; }
+
+section.home figure.one   { grid-area: h1; }
+section.home figure.two   { grid-area: h2; }
+section.home figure.three { grid-area: h3; }
+section.home figure.four  { grid-area: h4; }
+
+
+/*  projects page auto grid
+--------------------------------------------------------------------------------------- */		
+section.projects {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	grid-template-rows: auto;
+	grid-column-gap: 1.5rem;
+	grid-row-gap: 1rem;
+	grid-template-areas:
+	"f1 f2"
+	"f3 f4";
+}
+
+.projects figure.one   { grid-area: f1; }
+.projects figure.two   { grid-area: f2; }
+.projects figure.three { grid-area: f3; }
+.projects figure.four  { grid-area: f4; }
+
+
+/*  project page reflection section
+--------------------------------------------------------------------------------------- */		
+section.reflection {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	grid-template-rows: auto;
+	grid-column-gap: 1.5rem;
+	grid-row-gap: 1rem;
+	grid-template-areas:
+	"rh rh"
+	"d1 d2";
+}
+
+section.reflection h3		{ grid-area: rh; }
+section.reflection div		{ grid-area: d1; }
+section.reflection div.two	{ grid-area: d2; }
+
+section.reflection div p a { display: block; }
+
+
+} /* end 768px media query */
+
+
+/*  for big screens - currently just for testing
+--------------------------------------------------------------------------------------- */
+@media (min-width: 18000px) {
+	html { font-size: 24px; }
+}
+
+.slideshow-container {
+    position: relative;
+    overflow: hidden;
+}
+
+.slides {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.slide {
+    flex: 0 0 100%;
+}
+
+.prev, .next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    padding: 16px;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    font-size: 24px;
+    z-index: 100;
+}
+
+.prev {
+    left: 0;
+}
+
+.next {
+    right: 0;
+}
+
+/*  page title
+--------------------------------------------------------------------------------------- */
+
+/* Adjustments for the heading container */
+.heading-container {
+    text-align: center; /* Center align the text */
+}
+
+/* Adjustments for the h2 inside the heading container */
+.heading-container h2 {
+    display: inline-block; /* Make the heading display inline-block */
+    font-size: 2rem;
+    line-height: 2.15rem;
+    margin: 1rem auto 3rem; /* Center the heading vertically and horizontally */
+    position: relative; /* Add relative positioning */
+}
+
+/* Adjustments for the underline */
+.heading-container h2::after {
+    content: ''; /* Add pseudo-element for the line */
+    position: absolute; /* Position it absolutely */
+    left: 0; /* Align it with the left edge of the heading */
+    bottom: -8px; /* Adjust as needed to position the line */
+    width: 100%; /* Set width to 100% of the container */
+    height: 2px; /* Adjust the thickness of the line */
+    background-color: #b3b3b3; /* Adjust the color of the line */
+}
+
+/*  Fill Page
+--------------------------------------------------------------------------------------- */
+
+/* Styles for the slideshow on the homepage */
+#homepage .slideshow-container {
+    margin-top: 0; /* Remove margin on the top for the homepage */
+}
+
+/* Styles for the page titles on other pages */
+.heading-container h2 {
+    /* Your existing styles for page titles */
+}
+
+/* Keep the main slideshow and navigation fixed */
+.slideshow-container {
+    position: fixed;
+    top: 60px; /* Adjust according to the height of your navigation bar */
+    left: 0;
+    width: 100%;
+}
+
+nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    background-color: #ffffff; /* Add background color to nav bar */
+}
+
+/* Add margins to the body content */
+body {
+    margin-top: 60px; /* Adjust according to the height of your navigation bar */
+    margin-left: 15%; /* Adjust according to your desired left margin */
+    margin-right: 15%; /* Adjust according to your desired right margin */
+}
+
+.container {
+    padding-top: 120px; /* Adjust according to the combined height of navigation bar and slideshow */
+}
+
+/* Default styles for body margins */
+body {
+    margin-left: 15%; /* Default left margin */
+    margin-right: 15%; /* Default right margin */
+}
+
+/* Media query for smaller screens */
+@media (max-width: 768px) {
+    body {
+        margin-left: 5%; /* Reduced left margin */
+        margin-right: 5%; /* Reduced right margin */
+    }
+
+    /* Adjustments for the images to scale down */
+    .projects img {
+        width: 100%; /* Ensure images take full width */
+        height: auto; /* Maintain aspect ratio */
+    }
+}
+
+
