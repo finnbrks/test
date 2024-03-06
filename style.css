@@ -415,7 +415,7 @@ IMPORTANT: media query - switches on grid layout if page width is wider than 768
 --------------------------------------------------------------------------------------- */
 	section.images-three {
 		display: grid;
-		grid-template-columns: 1fr 1fr 1fr;
+		grid-template-columns: 1fr 1fr;
 		grid-template-rows: auto;
 		grid-column-gap: 2rem; 
 		grid-row-gap: 1rem;
@@ -437,29 +437,27 @@ IMPORTANT: media query - switches on grid layout if page width is wider than 768
 
 /*  images-three-plus
 --------------------------------------------------------------------------------------- */
-	section.images-three-plus {
-		display: grid;
-		grid-template-columns: 1fr 1fr 1fr;
-		grid-template-rows: auto;
-		grid-column-gap: 2rem; 
-		grid-row-gap: 2rem;
-		grid-template-areas:
-		"f1 f2 f3"
-		"d1 d2 d3";
-	}
+section.images-three-plus {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Adjusted to two columns */
+    grid-template-rows: auto;
+    grid-column-gap: 2rem; 
+    grid-row-gap: 2rem;
+    grid-template-areas:
+        "f1 f2" /* Adjusted grid areas */
+        "d1 d2"; /* Adjusted grid areas */
+    justify-items: center; /* Center content horizontally */
+}
 
-	section.images-three-plus figure				{ grid-area: f1; }
-	section.images-three-plus figure:nth-of-type(2)	{ grid-area: f2; }
-	section.images-three-plus figure:nth-of-type(3)	{ grid-area: f3; }
-	section.images-three-plus div					{ grid-area: d1; }
-	section.images-three-plus div:nth-of-type(2)	{ grid-area: d2; }
-	section.images-three-plus div:nth-of-type(3)	{ grid-area: d3; }
+section.images-three-plus figure { grid-area: f1; }
+section.images-three-plus figure:nth-of-type(2) { grid-area: f2; }
+section.images-three-plus div { grid-area: d1; }
+section.images-three-plus div:nth-of-type(2) { grid-area: d2; }
 
-	section.images-three-plus		{ padding: 0 0 2rem; }
+section.images-three-plus { padding: 0 0 2rem; }
 
-	section.images-three-plus div h3,
-	section.images-three-plus div p { font-size: 1.5rem; }
-
+section.images-three-plus div h3,
+section.images-three-plus div p { font-size: 1.5rem; }
 
 /* full width
 --------------------------------------------------------------------------------------- */
@@ -787,9 +785,9 @@ nav {
 
 /* Add margins to the body content */
 body {
-    margin-top: 0px; /* Adjust according to the height of your navigation bar */
-    margin-left: 5%; /* Adjust according to your desired left margin */
-    margin-right: 5%; /* Adjust according to your desired right margin */
+    margin-top: 120px; /* Adjust according to the height of your navigation bar */
+    margin-left: 15%; /* Adjust according to your desired left margin */
+    margin-right: 15%; /* Adjust according to your desired right margin */
 }
 
 /* Remove the padding-top from the container */
