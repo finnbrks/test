@@ -256,6 +256,7 @@ IMPORTANT: media query - switches on grid layout if page width is wider than 768
     width: 100%;
     height: auto;
     transition: filter 0.3s ease;
+    object-fit: cover; /* Add this line */
 }
 
 .slide:hover img {
@@ -786,19 +787,29 @@ nav {
 
 /* Add margins to the body content */
 body {
-    margin-top: 60px; /* Adjust according to the height of your navigation bar */
-    margin-left: 15%; /* Adjust according to your desired left margin */
-    margin-right: 15%; /* Adjust according to your desired right margin */
+    margin-top: 0px; /* Adjust according to the height of your navigation bar */
+    margin-left: 5%; /* Adjust according to your desired left margin */
+    margin-right: 5%; /* Adjust according to your desired right margin */
 }
 
+/* Remove the padding-top from the container */
 .container {
-    padding-top: 120px; /* Adjust according to the combined height of navigation bar and slideshow */
+    padding-top: 0; /* Remove padding-top */
 }
 
-/* Default styles for body margins */
-body {
-    margin-left: 15%; /* Default left margin */
-    margin-right: 15%; /* Default right margin */
+/* Adjustments for the slideshow container */
+.slideshow-container {
+    position: relative; /* Change to relative positioning */
+}
+
+/* Adjustments for the navigation */
+nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    background-color: #ffffff; /* Add background color to nav bar */
 }
 
 /* Media query for smaller screens */
@@ -813,6 +824,5 @@ body {
         width: 100%; /* Ensure images take full width */
         height: auto; /* Maintain aspect ratio */
     }
-}
 
 
